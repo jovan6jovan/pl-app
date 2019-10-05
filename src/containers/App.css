@@ -492,20 +492,22 @@ footer a {
     min-width: 280px;
   }
 
-  table {
-    font-size: 0.9rem;
-  }
-
   table th,
   table td {
     padding: 5px;
   }
 
-  .crest-url,
+  .won-th,
+  .draw-th,
+  .lost-th,
   .gf-th,
   .ga-th,
+  .won-td,
+  .draw-td,
+  .lost-td,
   .gf-td,
-  .ga-td {
+  .ga-td,
+  .crest-url {
     display: none;
   }
 

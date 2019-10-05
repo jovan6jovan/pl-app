@@ -27,9 +27,9 @@ const Table = props => {
             </span>
           </td>
           <td>{playedGames}</td>
-          <td>{won}</td>
-          <td>{draw}</td>
-          <td>{lost}</td>
+          <td className="won-td">{won}</td>
+          <td className="draw-td">{draw}</td>
+          <td className="lost-td">{lost}</td>
           <td className="points">{points}</td>
           <td className="gf-td">{goalsFor}</td>
           <td className="ga-td">{goalsAgainst}</td>
@@ -52,9 +52,9 @@ const Table = props => {
                 <th>Pos.</th>
                 <th>Club</th>
                 <th>Played</th>
-                <th>Won</th>
-                <th>Draw</th>
-                <th>Lost</th>
+                <th className="won-th">Won</th>
+                <th className="draw-th">Draw</th>
+                <th className="draw-th">Lost</th>
                 <th>Points</th>
                 <th className="gf-th">GF</th>
                 <th className="ga-th">GA</th>
