@@ -25,7 +25,7 @@ class App extends React.Component {
     this.setState({ loading: true });
 
     const response = await axios.get(
-      "http://api.football-data.org/v2/competitions/PL/standings",
+      "https://api.football-data.org/v2/competitions/PL/standings",
       {
         headers: {
           "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
@@ -45,7 +45,7 @@ class App extends React.Component {
       this.setState({ loading: true });
 
       const response = await axios.get(
-        `http://api.football-data.org/v2/teams/${event.target.id}`,
+        `https://api.football-data.org/v2/teams/${event.target.id}`,
         {
           headers: {
             "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
@@ -63,7 +63,7 @@ class App extends React.Component {
       this.setState({ loading: true });
 
       const response = await axios.get(
-        `http://api.football-data.org/v2/players/${event.target.id}`,
+        `https://api.football-data.org/v2/players/${event.target.id}`,
         {
           headers: {
             "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
