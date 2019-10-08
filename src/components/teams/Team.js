@@ -70,7 +70,12 @@ const Team = props => {
                     </div>
                 </header>
                 <h1 className="text-center mt-1">Players</h1>
-                <input type="search" placeholder="Search player" onChange={props.onChangeHandler} />
+                <input
+                    type="search"
+                    placeholder="Search player"
+                    onChange={props.onChangeHandler}
+                    value={props.searchTerm}
+                />
                 <div className="container grid-3 mt-2 py-1">
                     {squadLayout}
                 </div>
