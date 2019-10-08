@@ -15,7 +15,11 @@ const Team = props => {
             return <Spinner />
         }
 
-        const squadLayout = squad.map(player => {
+        let filteredPlayers = squad.filter(player => {
+            return player.name.toLowerCase().indexOf(props.searchTerm.toLowerCase()) !== -1;
+        })
+
+        const squadLayout = filteredPlayers.map(player => {
             return (
                 <div key={player.id} className="card all-center">
                     <ul className="p-1">
@@ -66,6 +70,7 @@ const Team = props => {
                     </div>
                 </header>
                 <h1 className="text-center mt-1">Players</h1>
+                <input type="search" placeholder="Search player" onChange={props.onChangeHandler} />
                 <div className="container grid-3 mt-2 py-1">
                     {squadLayout}
                 </div>

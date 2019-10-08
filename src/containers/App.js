@@ -18,6 +18,7 @@ class App extends React.Component {
     player: {},
     prevMatches: [],
     upcMatches: [],
+    searchTerm: '',
     loading: false
   };
 
@@ -109,6 +110,10 @@ class App extends React.Component {
     }
   }
 
+  onChangeHandler = event => {
+    this.setState({ searchTerm: event.target.value });
+  }
+
   render() {
     return (
       <Router>
@@ -139,6 +144,8 @@ class App extends React.Component {
                     getPlayerInfo={this.getPlayerInfo}
                     getPrevMatches={this.getPrevMatches}
                     getUpcMatches={this.getUpcMatches}
+                    onChangeHandler = {this.onChangeHandler}
+                    searchTerm = {this.state.searchTerm}
                     loading={this.state.loading}
                   />
                 );
