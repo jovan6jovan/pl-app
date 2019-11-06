@@ -19,11 +19,13 @@ const Table = props => {
       } = team; //destructuring
       return (
         <tr key={id}>
-          <td style={{fontWeight: "700"}}>{position}</td>
+          <td style={{ fontWeight: "700" }}>{position}</td>
           <td className="team-details">
             <img src={crestUrl} className="crest-url" alt="team logo" />
             <span className="team-name">
-                <Link onClick={props.clicked} to={`/team/${id}`} id={id}>{name}</Link>
+              <Link onClick={props.clicked} to={`/team/${id}`} id={id}>
+                {name}
+              </Link>
             </span>
           </td>
           <td>{playedGames}</td>
@@ -45,7 +47,7 @@ const Table = props => {
     return (
       <div className="container">
         <h1 className="text-center my-2">Premier League Table</h1>
-        <div style={{overflowX: "auto"}}>
+        <div style={{ overflowX: "auto" }}>
           <table>
             <thead>
               <tr>

@@ -41,7 +41,6 @@ class App extends React.Component {
   }
 
   getTeamInfo = async event => {
-    // Get info about single team
     if (event.target.id !== "") {
       this.setState({ loading: true });
 
@@ -59,7 +58,6 @@ class App extends React.Component {
   };
 
   getPlayerInfo = async event => {
-    // Get info about single player
     if (event.target.id !== "") {
       this.setState({ loading: true });
 

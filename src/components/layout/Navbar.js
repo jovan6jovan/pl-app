@@ -10,8 +10,12 @@ const Navbar = () => {
         alt="Premier League logo"
       />
       <ul>
-        <li style={{fontSize: "18px", textTransform: "uppercase"}}><Link to="/">Home</Link></li>
-        <li style={{fontSize: "18px", textTransform: "uppercase"}}><Link to="/about">About</Link></li>
+        <li style={{ fontSize: "18px", textTransform: "uppercase" }}>
+          <Link to="/">Home</Link>
+        </li>
+        <li style={{ fontSize: "18px", textTransform: "uppercase" }}>
+          <Link to="/about">About</Link>
+        </li>
       </ul>
     </nav>
   );
