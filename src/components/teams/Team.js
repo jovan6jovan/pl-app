@@ -2,20 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../layout/Spinner";
 
-const Team = props => {
+const Team = (props) => {
   const { id, name, squad, venue, website } = props.team;
 
   if (props.loading) {
     return <Spinner />;
   }
 
-  let filteredPlayers = squad.filter(player => {
+  let filteredPlayers = squad.filter((player) => {
     return (
       player.name.toLowerCase().indexOf(props.searchTerm.toLowerCase()) !== -1
     );
   });
 
-  const squadLayout = filteredPlayers.map(player => {
+  const squadLayout = filteredPlayers.map((player) => {
     return (
       <div key={player.id} className="card all-center">
         <ul className="p-1">

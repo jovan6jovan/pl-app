@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../layout/Spinner";
 
-const Table = props => {
+const Table = (props) => {
   const renderTableData = () => {
-    return props.standings.map(team => {
+    return props.standings.map((team) => {
       const {
         position,
         team: { id, name, crestUrl },
@@ -15,7 +15,7 @@ const Table = props => {
         points,
         goalsFor,
         goalsAgainst,
-        goalDifference
+        goalDifference,
       } = team; //destructuring
       return (
         <tr key={id}>

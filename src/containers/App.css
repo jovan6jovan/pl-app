@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
 :root {
-  --primary-color: #FF2882;
-  --dark-color: #37003C;
+  --primary-color: #ff2882;
+  --dark-color: #37003c;
   --light-color: #fff;
-  --danger-color: #D81921;
-  --success-color: #00FF87;
+  --danger-color: #d81921;
+  --success-color: #00ff87;
 }
 
 * {
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -224,10 +224,10 @@ input {
   color: #888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='search'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
 select,
 textarea {
   display: block;
@@ -237,11 +237,11 @@ textarea {
   border: 1px solid #ccc;
 }
 
-input[type='search'] {
+input[type="search"] {
   margin: 1rem auto;
 }
 
-input[type='submit'],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -293,7 +293,7 @@ table {
   width: 100%;
   border: 3px solid #333;
   border-collapse: collapse;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 
 .crest-url {
@@ -365,13 +365,13 @@ header {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .player-card {

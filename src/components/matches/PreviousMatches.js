@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "../layout/Spinner";
 
-const PreviousMatches = props => {
+const PreviousMatches = (props) => {
   if (props.loading) {
     return <Spinner />;
   }
@@ -9,7 +9,7 @@ const PreviousMatches = props => {
     <React.Fragment>
       <h1 className="text-center mb-1">Previous Matches</h1>
       <div className="container results-container mt-2">
-        {props.prevMatches.map(match => {
+        {props.prevMatches.map((match) => {
           let formattedDate = new Date(match.utcDate);
           return (
             <React.Fragment key={match.id}>

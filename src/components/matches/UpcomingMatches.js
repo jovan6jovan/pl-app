@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "../layout/Spinner";
 
-const UpcomingMatches = props => {
+const UpcomingMatches = (props) => {
   if (props.loading) {
     return <Spinner />;
   }
@@ -10,7 +10,7 @@ const UpcomingMatches = props => {
     <React.Fragment>
       <h1 className="text-center mb-1">Upcoming Matches</h1>
       <div className="container fixtures-container mt-2">
-        {props.upcMatches.map(match => {
+        {props.upcMatches.map((match) => {
           let formattedDate = new Date(match.utcDate);
           return (
             <React.Fragment key={match.id}>

@@ -1,14 +1,14 @@
 import React from "react";
 import Spinner from "../layout/Spinner";
 
-const Player = props => {
+const Player = (props) => {
   const {
     name,
     dateOfBirth,
     countryOfBirth,
     nationality,
     position,
-    shirtNumber
+    shirtNumber,
   } = props.player;
 
   if (props.loading) {

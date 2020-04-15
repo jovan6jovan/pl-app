@@ -18,8 +18,8 @@ class App extends React.Component {
     player: {},
     prevMatches: [],
     upcMatches: [],
-    searchTerm: '',
-    loading: false
+    searchTerm: "",
+    loading: false,
   };
 
   async componentDidMount() {
@@ -29,18 +29,18 @@ class App extends React.Component {
       "https://api.football-data.org/v2/competitions/PL/standings",
       {
         headers: {
-          "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
-        }
+          "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`,
+        },
       }
     );
 
     this.setState({
       standings: response.data.standings[0].table,
-      loading: false
+      loading: false,
     });
   }
 
-  getTeamInfo = async event => {
+  getTeamInfo = async (event) => {
     if (event.target.id !== "") {
       this.setState({ loading: true });
 
@@ -48,8 +48,8 @@ class App extends React.Component {
         `https://api.football-data.org/v2/teams/${event.target.id}`,
         {
           headers: {
-            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
-          }
+            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`,
+          },
         }
       );
 
@@ -57,7 +57,7 @@ class App extends React.Component {
     }
   };
 
-  getPlayerInfo = async event => {
+  getPlayerInfo = async (event) => {
     if (event.target.id !== "") {
       this.setState({ loading: true });
 
@@ -65,8 +65,8 @@ class App extends React.Component {
         `https://api.football-data.org/v2/players/${event.target.id}`,
         {
           headers: {
-            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
-          }
+            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`,
+          },
         }
       );
 
@@ -74,7 +74,7 @@ class App extends React.Component {
     }
   };
 
-  getPrevMatches = async event => {
+  getPrevMatches = async (event) => {
     if (event.target.id !== "") {
       this.setState({ loading: true });
 
@@ -82,16 +82,16 @@ class App extends React.Component {
         `https://api.football-data.org/v2/teams/${event.target.id}/matches?status=FINISHED`,
         {
           headers: {
-            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
-          }
+            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`,
+          },
         }
       );
 
       this.setState({ prevMatches: response.data.matches, loading: false });
     }
-  }
+  };
 
-  getUpcMatches = async event => {
+  getUpcMatches = async (event) => {
     if (event.target.id !== "") {
       this.setState({ loading: true });
 
@@ -99,18 +99,18 @@ class App extends React.Component {
         `https://api.football-data.org/v2/teams/${event.target.id}/matches?status=SCHEDULED`,
         {
           headers: {
-            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`
-          }
+            "X-Auth-Token": `6bd7a582d057450d82c8ea7b1fe14410`,
+          },
         }
       );
 
       this.setState({ upcMatches: response.data.matches, loading: false });
     }
-  }
+  };
 
-  onChangeHandler = event => {
+  onChangeHandler = (event) => {
     this.setState({ searchTerm: event.target.value });
-  }
+  };
 
   render() {
     return (
@@ -119,8 +119,9 @@ class App extends React.Component {
           <Navbar />
           <Switch>
             <Route
-              exact path="/"
-              render={props => {
+              exact
+              path="/"
+              render={(props) => {
                 return (
                   <Table
                     clicked={this.getTeamInfo}
@@ -132,8 +133,9 @@ class App extends React.Component {
             />
             <Route exact path="/about" component={About} />
             <Route
-              exact path="/team/:id"
-              render={props => {
+              exact
+              path="/team/:id"
+              render={(props) => {
                 return (
                   <Team
                     {...props}
@@ -142,16 +144,17 @@ class App extends React.Component {
                     getPlayerInfo={this.getPlayerInfo}
                     getPrevMatches={this.getPrevMatches}
                     getUpcMatches={this.getUpcMatches}
-                    onChangeHandler = {this.onChangeHandler}
-                    searchTerm = {this.state.searchTerm}
+                    onChangeHandler={this.onChangeHandler}
+                    searchTerm={this.state.searchTerm}
                     loading={this.state.loading}
                   />
                 );
               }}
             />
             <Route
-              exact path="/player/:id"
-              render={props => (
+              exact
+              path="/player/:id"
+              render={(props) => (
                 <Player
                   {...props}
                   getPlayerInfo={() => this.getPlayerInfo}
@@ -161,8 +164,9 @@ class App extends React.Component {
               )}
             />
             <Route
-              exact path="/previous-matches/:id"
-              render={props => (
+              exact
+              path="/previous-matches/:id"
+              render={(props) => (
                 <PreviousMatches
                   {...props}
                   getPrevMatches={() => this.getPrevMatches}
@@ -172,8 +176,9 @@ class App extends React.Component {
               )}
             />
             <Route
-              exact path="/upcoming-matches/:id"
-              render={props => (
+              exact
+              path="/upcoming-matches/:id"
+              render={(props) => (
                 <UpcomingMatches
                   {...props}
                   getUpcMatches={() => this.getUpcMatches}
